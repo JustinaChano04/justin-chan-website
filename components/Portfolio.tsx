@@ -177,19 +177,19 @@ export default function Portfolio({
           <h2 className="mb-8 text-3xl font-semibold tracking-tight text-stone-950 sm:text-4xl dark:text-neutral-50">
             Experience
           </h2>
-          <div className="relative space-y-6 before:absolute before:bottom-3 before:left-[5.35rem] before:top-3 before:w-px before:bg-gradient-to-b before:from-sky-300 before:via-stone-300 before:to-transparent dark:before:from-cyan-400 dark:before:via-neutral-700">
+          <div className="relative space-y-6 before:absolute before:bottom-3 before:left-2 before:top-3 before:w-px before:bg-gradient-to-b before:from-sky-400 before:via-stone-300 before:to-transparent dark:before:from-cyan-300 dark:before:via-neutral-700 sm:before:left-[5.35rem]">
             {experience.map((job, index) => (
               <div
                 key={index}
-                className="relative grid gap-2 pl-0 sm:grid-cols-[5.25rem_1.2rem_minmax(0,1fr)] sm:gap-6"
+                className="relative grid grid-cols-[1rem_minmax(0,1fr)] gap-x-4 gap-y-2 sm:grid-cols-[5.25rem_1.2rem_minmax(0,1fr)] sm:gap-6"
               >
-                <div className="pr-2 pt-0.5 text-sm font-semibold uppercase tracking-[0.18em] text-stone-500 dark:text-neutral-500">
+                <div className="col-start-2 pr-2 pt-0.5 text-sm font-semibold uppercase tracking-[0.18em] text-stone-500 dark:text-neutral-500 sm:col-start-auto">
                   {job.period}
                 </div>
-                <div className="relative hidden sm:block">
+                <div className="relative">
                   <div className="absolute left-1/2 top-3 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-white bg-sky-500 shadow-sm dark:border-neutral-950 dark:bg-cyan-400" />
                 </div>
-                <div className="pb-1">
+                <div className="col-start-2 pb-1 sm:col-start-auto">
                   <div className="text-xl font-semibold tracking-tight text-stone-950 sm:text-2xl dark:text-neutral-50">
                     {job.title}
                   </div>
