@@ -1,7 +1,10 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import MarkdownContent from '@/components/MarkdownContent';
+import StructuredData from '@/components/StructuredData';
 import { getBlogBySlug, getBlogs } from '@/lib/content';
+import { absoluteUrl, createBlogSchema } from '@/lib/seo';
 
 type BlogPageProps = {
   params: Promise<{
@@ -14,6 +17,39 @@ export async function generateStaticParams() {
   return blogs.map((blog) => ({ slug: blog.slug }));
 }
 
+export async function generateMetadata({
+  params,
+}: BlogPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = await getBlogBySlug(slug);
+
+  if (!blog) {
+    return {
+      title: 'Post not found',
+    };
+  }
+
+  return {
+    title: blog.title,
+    description: blog.summary,
+    alternates: {
+      canonical: `/blogs/${blog.slug}`,
+    },
+    openGraph: {
+      type: 'article',
+      url: absoluteUrl(`/blogs/${blog.slug}`),
+      title: `${blog.title} | Justin Chan`,
+      description: blog.summary,
+      publishedTime: blog.date,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${blog.title} | Justin Chan`,
+      description: blog.summary,
+    },
+  };
+}
+
 export default async function BlogPage({ params }: BlogPageProps) {
   const { slug } = await params;
   const blog = await getBlogBySlug(slug);
@@ -24,6 +60,14 @@ export default async function BlogPage({ params }: BlogPageProps) {
 
   return (
     <main className="min-h-screen bg-stone-50 px-6 py-16 text-stone-900 dark:bg-neutral-950 dark:text-neutral-50">
+      <StructuredData
+        data={createBlogSchema({
+          title: blog.title,
+          description: blog.summary,
+          slug: blog.slug,
+          datePublished: blog.date,
+        })}
+      />
       <div className="mx-auto max-w-3xl">
         <div className="mb-10 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-stone-600 dark:text-neutral-400">
           <Link

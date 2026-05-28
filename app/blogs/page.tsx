@@ -1,5 +1,22 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getBlogs } from '@/lib/content';
+import { absoluteUrl } from '@/lib/seo';
+
+export const metadata: Metadata = {
+  title: 'Blogs',
+  description:
+    'Writing from Justin Chan on AI systems, interfaces, product thinking, and technical work.',
+  alternates: {
+    canonical: '/blogs',
+  },
+  openGraph: {
+    url: absoluteUrl('/blogs'),
+    title: 'Blogs | Justin Chan',
+    description:
+      'Writing from Justin Chan on AI systems, interfaces, product thinking, and technical work.',
+  },
+};
 
 export default async function BlogsPage() {
   const blogs = await getBlogs();

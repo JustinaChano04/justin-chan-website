@@ -1,7 +1,10 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import MarkdownContent from '@/components/MarkdownContent';
+import StructuredData from '@/components/StructuredData';
 import { getProjectBySlug, getProjects } from '@/lib/content';
+import { absoluteUrl, createProjectSchema } from '@/lib/seo';
 
 type ProjectPageProps = {
   params: Promise<{
@@ -14,6 +17,38 @@ export async function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
 }
 
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
+
+  if (!project) {
+    return {
+      title: 'Project not found',
+    };
+  }
+
+  return {
+    title: project.title,
+    description: project.summary,
+    alternates: {
+      canonical: `/projects/${project.slug}`,
+    },
+    openGraph: {
+      type: 'article',
+      url: absoluteUrl(`/projects/${project.slug}`),
+      title: `${project.title} | Justin Chan`,
+      description: project.summary,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${project.title} | Justin Chan`,
+      description: project.summary,
+    },
+  };
+}
+
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
   const project = await getProjectBySlug(slug);
@@ -24,6 +59,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <main className="min-h-screen bg-stone-50 px-6 py-16 text-stone-900 dark:bg-neutral-950 dark:text-neutral-50">
+      <StructuredData
+        data={createProjectSchema({
+          title: project.title,
+          description: project.summary,
+          slug: project.slug,
+          tags: project.tags,
+        })}
+      />
       <div className="mx-auto max-w-3xl">
         <Link
           href="/"

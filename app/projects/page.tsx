@@ -1,5 +1,22 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getProjects } from '@/lib/content';
+import { absoluteUrl } from '@/lib/seo';
+
+export const metadata: Metadata = {
+  title: 'Projects',
+  description:
+    'Project portfolio of Justin Chan covering agentic AI, machine learning, research, and product engineering work.',
+  alternates: {
+    canonical: '/projects',
+  },
+  openGraph: {
+    url: absoluteUrl('/projects'),
+    title: 'Projects | Justin Chan',
+    description:
+      'Project portfolio of Justin Chan covering agentic AI, machine learning, research, and product engineering work.',
+  },
+};
 
 export default async function ProjectsPage() {
   const projects = await getProjects();

@@ -46,14 +46,26 @@ In Vercel dashboard:
 2. Add your custom domain
 3. Update DNS records (Vercel provides instructions)
 
+## SEO Setup
+
+Set `NEXT_PUBLIC_SITE_URL` to your production domain before deploying so canonical URLs, sitemap entries, and structured data point to the correct host.
+
+Example:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://justinchan.tech
+```
+
 ## Editing Content
 
-All portfolio content is in `components/Portfolio.tsx`:
+Most portfolio content lives in Markdown under `content/`:
 
-- **Projects**: Edit the `projects` array (lines 28-64)
-- **Experience**: Edit the `experience` array (lines 66-73)
-- **About**: Edit the about text (line 135)
-- **Links**: Update LinkedIn/GitHub/Resume URLs (lines 113-134)
+- **Profile**: `content/site/profile.md`
+- **Projects**: `content/projects/*.md`
+- **Experience**: `content/experience/*.md`
+- **Blogs**: `content/blogs/*.md`
+
+Shared SEO settings live in `app/layout.tsx`, `app/sitemap.ts`, `app/robots.ts`, and `lib/seo.ts`.
 
 ## Tech Stack
 
