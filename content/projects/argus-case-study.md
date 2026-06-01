@@ -1,6 +1,6 @@
 ---
 title: Argus Case Study
-order: 7
+order: 3
 tags: Product Strategy | Analysis
 ---
 Case study for a smart doorbell and camera security system focused on facial recognition, motion awareness, and mobile notifications.

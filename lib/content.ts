@@ -10,6 +10,7 @@ export type Profile = {
   linkedinUrl: string;
   githubUrl: string;
   resumeUrl: string;
+  email: string;
   headshot: string;
   about: string;
 };
@@ -108,6 +109,7 @@ export async function getProfile(): Promise<Profile> {
     linkedinUrl: data.linkedinUrl ?? '',
     githubUrl: data.githubUrl ?? '',
     resumeUrl: data.resumeUrl ?? '',
+    email: data.email ?? '',
     headshot: data.headshot ?? '',
     about: body,
   };

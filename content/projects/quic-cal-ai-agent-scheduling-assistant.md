@@ -1,6 +1,6 @@
 ---
 title: Quic-Cal: AI Agent Scheduling Assistant
-order: 2
+order: 4
 tags: LangGraph | Python | NLP
 ---
 AI scheduling assistant designed to reduce the friction of calendar setup by letting users create meetings through natural language instead of repetitive form-based workflows.
