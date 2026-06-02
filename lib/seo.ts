@@ -1,4 +1,4 @@
-const defaultSiteUrl = 'http://localhost:3000';
+const defaultSiteUrl = 'https://justinchan.tech';
 
 function normalizeSiteUrl(value: string | undefined) {
   if (!value) {

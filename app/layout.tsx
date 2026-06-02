@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: siteOrigin,
   title: {
-    default: "Justin Chan | AI Engineer Portfolio",
+    default: "Justin Chan | AI Engineer & Machine Learning",
     template: "%s | Justin Chan",
   },
   description:
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: absoluteUrl("/"),
-    title: "Justin Chan | AI Engineer Portfolio",
+    title: "Justin Chan | AI Engineer & Machine Learning",
     description:
       "Portfolio of Justin Chan, an AI engineer building agentic AI, machine learning systems, and product-focused software.",
     siteName: "Justin Chan Portfolio",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Justin Chan | AI Engineer Portfolio",
+    title: "Justin Chan | AI Engineer & Machine Learning",
     description:
       "Portfolio of Justin Chan, an AI engineer building agentic AI, machine learning systems, and product-focused software.",
     images: [absoluteUrl("/headshot-casual.jpg")],
