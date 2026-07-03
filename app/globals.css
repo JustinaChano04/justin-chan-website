@@ -26,6 +26,11 @@ body {
   line-height: 1.65;
 }
 
+.katex-display {
+  text-align: center;
+  overflow-x: auto;
+}
+
 .hero-links-primary,
 .hero-links-secondary {
   display: flex;
