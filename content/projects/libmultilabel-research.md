@@ -4,6 +4,8 @@ order: 2
 tags: Python | LibMultiLabel | Machine Learning | Recommender Systems | Research
 ---
 
+An investigation into memory-performance tradeoffs in extreme multi-label classification (XMC), where label spaces reach hundreds of thousands of categories. We compare global and per-label weight matrix pruning strategies across four benchmark datasets, finding that global thresholding consistently preserves more predictive signal at equivalent sparsity levels.
+
 ## Introduction
 
 Multi-label classification is the problem of learning a machine learning classifier where each input may be associated with any number of labels. When the label space reaches an extreme scale - tens of thousands to hundreds of thousands of distinct labels — the problem is known as extreme multi-label classification (XMC). At this scale, naive approaches become computationally intractable; purpose-built XMC methods address this through divide-and-conquer, recursively partitioning the label space into smaller subproblems. Linear models are the natural choice for each subproblem: they are simpler, faster, and easier to tune than neural networks, which require hardware acceleration even at moderate scale.
