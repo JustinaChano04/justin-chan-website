@@ -254,41 +254,43 @@ export default function Portfolio({
           </div>
         </section>
 
-        {blogs.length > 0 ? (
-          <section className="mb-16">
-            <div className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700 dark:text-amber-300">
-              Writing
-            </div>
-            <h2 className="mb-8 text-3xl font-semibold tracking-tight text-stone-950 sm:text-4xl dark:text-neutral-50">
-              Blogs
-            </h2>
-            <div className="space-y-6">
-              {blogs.slice(0, 3).map((blog) => (
-                <Link
-                  key={blog.slug}
-                  href={`/blogs/${blog.slug}`}
-                  className="group block rounded-3xl border border-stone-200/80 bg-white/75 px-6 py-6 no-underline shadow-[0_14px_40px_rgba(15,23,42,0.05)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-amber-300 hover:shadow-[0_20px_50px_rgba(217,119,6,0.12)] dark:border-neutral-800 dark:bg-neutral-900/70 dark:hover:border-cyan-400/40 dark:hover:shadow-[0_20px_50px_rgba(34,211,238,0.10)]"
-                >
-                  <div className="mb-2 text-sm font-medium uppercase tracking-[0.18em] text-stone-500 dark:text-neutral-500">
-                    {blog.date}
-                  </div>
-                  <h3 className="mb-2 text-xl font-semibold tracking-tight text-stone-950 sm:text-2xl dark:text-neutral-100">
-                    {blog.title}
-                  </h3>
-                  <p className="text-lg leading-relaxed text-stone-700 dark:text-neutral-300">
-                    {blog.summary}
-                  </p>
-                </Link>
-              ))}
-            </div>
-            <Link
-              href="/blogs"
-              className="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.18em] text-stone-500 transition-colors hover:text-stone-900 dark:text-neutral-500 dark:hover:text-neutral-100"
-            >
-              View all blogs
-            </Link>
-          </section>
-        ) : null}
+        <section className="mb-16">
+          <div className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-amber-700 dark:text-amber-300">
+            Writing
+          </div>
+          <h2 className="mb-8 text-3xl font-semibold tracking-tight text-stone-950 sm:text-4xl dark:text-neutral-50">
+            Blogs
+          </h2>
+          {blogs.length > 0 && (
+            <>
+              <div className="space-y-6">
+                {blogs.slice(0, 3).map((blog) => (
+                  <Link
+                    key={blog.slug}
+                    href={`/blogs/${blog.slug}`}
+                    className="group block rounded-3xl border border-stone-200/80 bg-white/75 px-6 py-6 no-underline shadow-[0_14px_40px_rgba(15,23,42,0.05)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-amber-300 hover:shadow-[0_20px_50px_rgba(217,119,6,0.12)] dark:border-neutral-800 dark:bg-neutral-900/70 dark:hover:border-cyan-400/40 dark:hover:shadow-[0_20px_50px_rgba(34,211,238,0.10)]"
+                  >
+                    <div className="mb-2 text-sm font-medium uppercase tracking-[0.18em] text-stone-500 dark:text-neutral-500">
+                      {blog.date}
+                    </div>
+                    <h3 className="mb-2 text-xl font-semibold tracking-tight text-stone-950 sm:text-2xl dark:text-neutral-100">
+                      {blog.title}
+                    </h3>
+                    <p className="text-lg leading-relaxed text-stone-700 dark:text-neutral-300">
+                      {blog.summary}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+              <Link
+                href="/blogs"
+                className="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.18em] text-stone-500 transition-colors hover:text-stone-900 dark:text-neutral-500 dark:hover:text-neutral-100"
+              >
+                View all blogs
+              </Link>
+            </>
+          )}
+        </section>
       </div>
     </div>
   );
