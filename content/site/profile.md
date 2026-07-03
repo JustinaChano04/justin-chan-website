@@ -8,8 +8,8 @@ resumeUrl: https://drive.google.com/file/d/1phe1f50dsn527v9kXTBPOo1aW-vmJ5y9/vie
 email: justinchanchan8@gmail.com
 headshot: /headshot-casual.jpg
 ---
-I am an AI engineer focused on turning ambitious AI ideas into real products. My work spans agentic AI, machine learning research, LLM applications, and product engineering for experiences that need to be both technically strong and genuinely useful.
+I am an AI engineer focused on turning ambitious AI ideas into real products. My work spans machine learning research/applications, agentic systems, LLM applications, for experiences that need to be both technically strong and genuinely useful.
 
-I care about the space where engineering, AI, and product strategy meet. That usually means building systems that are not only intelligent, but also safe, trusworthy, and reliable.
+I particularly interested where engineering, AI, and product strategy meet. That usually means building systems that are not only intelligent, but also safe, trustworthy, and reliable.
 
 This portfolio collects the projects, experiments, and writing that shape how I think about modern AI products.

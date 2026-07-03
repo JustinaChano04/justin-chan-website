@@ -1,5 +1,11 @@
+'use client';
+
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import rehypeRaw from 'rehype-raw';
+import 'katex/dist/katex.min.css';
 
 type MarkdownContentProps = {
   content: string;
@@ -9,7 +15,8 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
   return (
     <div className="space-y-5">
       <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
+        remarkPlugins={[remarkGfm, remarkMath]}
+        rehypePlugins={[rehypeRaw, rehypeKatex]}
         components={{
           h1: ({ children }) => (
             <h1 className="pt-4 text-3xl font-semibold tracking-tight text-stone-950 dark:text-neutral-50">
