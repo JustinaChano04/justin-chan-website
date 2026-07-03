@@ -1,5 +1,5 @@
 ---
-title: Nora - OpenClaw Orchestration Layer
+title: Nora - OpenClaw Orchestration Platform
 order: 1
 tags: OpenClaw | Agent Orchestration | LLMOps | Observability | Kubernetes | BullMQ | TypeScript | Next.js | | PostgreSQL | Redis
 ---

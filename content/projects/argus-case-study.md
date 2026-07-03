@@ -1,5 +1,5 @@
 ---
-title: Argus Case Study
+title: Argus Doorbell
 order: 3
 tags: Computer Vision | Facial Recognition | IoT | Home Security |Python | React | OpenCV | Redis | Docker | Raspberry Pi
 ---

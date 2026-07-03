@@ -1,5 +1,5 @@
 ---
-title: LibMultiLabel Text Classification
+title: Thresholding Study in Extreme Multi-Label Classification
 order: 2
 tags: Python | LibMultiLabel | Machine Learning | Recommender Systems | Research
 ---
