@@ -1,7 +1,7 @@
 ---
 title: Nora - OpenClaw Orchestration Layer
 order: 1
-tags: TypeScript | BullMQ | Redis | MCP
+tags: TypeScript | Next.js | Express | PostgreSQL | Redis | Docker | Kubernetes | BullMQ | Agent Orchestration | LLMOps | Observability | MCP
 ---
 Open-source orchestration framework for AI agent development, combining marketplace-style tooling, async skill installation, and a structured multi-phase workflow for building and running agents.
 
