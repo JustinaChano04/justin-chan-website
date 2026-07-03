@@ -1,7 +1,7 @@
 ---
 title: Argus Case Study
 order: 3
-tags: Python | React | OpenCV | Redis | Docker | Raspberry Pi | Computer Vision | Facial Recognition | IoT | Home Security
+tags: Computer Vision | Facial Recognition | IoT | Home Security |Python | React | OpenCV | Redis | Docker | Raspberry Pi
 ---
 Case study for a smart doorbell and camera security system focused on facial recognition, motion awareness, and mobile notifications.
 
